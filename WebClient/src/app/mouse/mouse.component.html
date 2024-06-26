@@ -1,0 +1,20 @@
+<table *ngIf="czyTabela" border="1">
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>Model</th>
+          <th>dpi</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let m of mouse" [app-mouse-row]="m" (doUsuniecia)="deleteMouse(m.mouseId)"></tr>
+  </tbody>
+</table>
+<button (click)="onDataStyleChange()">
+  {{czyTabela ? 'Dodaj Myszke' : 'Anuluj Dodawanie Myszki'}}
+</button>
+
+<div *ngIf="!czyTabela">
+  <app-form (submit)="onSubmit()">
+  </app-form>
+</div>

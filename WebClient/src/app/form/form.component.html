@@ -1,0 +1,12 @@
+<form #mouseForm="ngForm" (ngSubmit)="onSubmit(mouseForm)">
+  <div>
+      <label for="model">Model</label>
+      <input type="text" name="model" [(ngModel)]="object.model" required>
+  </div>
+  <div>
+      <label for="dpi">Dpi</label>
+      <input type="number" name="dpi" [(ngModel)]="object.dpi" min="0" required>
+  </div>
+  <form #mouseForm="ngForm" (ngSubmit)="onSubmit(mouseForm)">
+    <button type="submit" [disabled]="mouseForm.invalid">Wyslij</button>
+  </form>
